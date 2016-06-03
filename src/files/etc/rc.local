@@ -1,0 +1,12 @@
+# Fix permissions the first time the system starts
+
+if [ ! -f /.permissions ]; then
+  chown -R vagrant:vagrant /home/vagrant
+  chmod 755 /home/vagrant
+  chmod 700 /home/vagrant/.ssh
+  chmod 600 /home/vagrant/.ssh/authorized_keys
+  chmod 755 /sbin/shutdown
+  touch /.permissions
+fi
+
+exit 0
