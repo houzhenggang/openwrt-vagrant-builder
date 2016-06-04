@@ -11,7 +11,7 @@ I followed the build process described on the [OpenWrt wiki page]
 experience by cloning this repository and bringing the Vagrant machine up.
 
 Watchful eyes will immediately discover that `Vagrantfile` configures two 
-provisioners, one for cloning the source repository and bringing up a general
+provisioners, one for cloning the source repository and initializing a general
 build environment for OpenWrt, while the other builds stuff and produces
 a disk image that can be converted to a box. To use the former provisioner
 only, run the `vagrant up --provision-with devenv` command when starting. 
@@ -33,7 +33,6 @@ $ vagrant box add openwrt.box --name pppq/openwrt --force
     box: Unpacking necessary files from: file://Development/openwrt/box/openwrt.box
     box:
 ==> box: Successfully added box 'pppq/openwrt' (v0) for 'virtualbox'!
-
 ```
 
 Apart from building the disk image locally, this project is heavily inspired
