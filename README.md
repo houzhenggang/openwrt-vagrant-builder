@@ -1,4 +1,4 @@
-# OpenWrt 15.05 (Chaos Calmer) x86 Vagrant box builder
+# OpenWrt 15.05 (Chaos Calmer) x86 Vagrant builder
 
 I feel the need, the need for a Vagrant environment in which I can experiment
 with various pieces of our SOHO infrastructure without the fear of breaking
@@ -12,7 +12,7 @@ experience by cloning this repository and bringing the Vagrant machine up.
 
 Watchful eyes will immediately discover that `Vagrantfile` configures two 
 provisioners, one for cloning the source repository and bringing up a general
-development environment for OpenWrt, while the other builds stuff and produces
+build environment for OpenWrt, while the other builds stuff and produces
 a disk image that can be converted to a box. To use the former provisioner
 only, run the `vagrant up --provision-with devenv` command when starting. 
 Should you continue to the building phase, you might want to grab a nice book
