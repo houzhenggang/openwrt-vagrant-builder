@@ -9,6 +9,8 @@
 VMNAME="openwrt-base-x86"
 VDI="./openwrt-x86-kvm_guest-combined-ext4.vdi"
 
+hash VBoxManage 2>/dev/null || { echo >&2 "VBoxManage command is not available, exiting with error."; exit 1; }
+
 VBoxManage createvm --name $VMNAME --register && \
 VBoxManage modifyvm $VMNAME \
   --ostype "Linux26" \
@@ -30,11 +32,10 @@ VBoxManage storageattach $VMNAME \
   --nonrotational "off" \
   --medium $VDI
 
-if [ -f openwrt.box ]; then
-  rm -v openwrt.box
-fi
+# Remove any leftover box files
+rm -fv openwrt.box
 
-# Detach storage before deleting VM files
+# Detach storage before deleting VM files so the VDI does not get removed
 vagrant package --base $VMNAME --include _Vagrantfile --output openwrt.box && \
 VBoxManage storageattach $VMNAME \
   --storagectl "IDE Controller" \
