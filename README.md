@@ -50,8 +50,8 @@ manages forwarding for SSH port 22.
 access to LuCI is enabled in the firewall configuration. (Note that depending on
 your use case, these settings might make your VM less secure.)
 - To connect other VMs to the LAN side, add a host-only interface in the second
-slot with an IP address of 192.168.99.2, netmask 255.255.255.0 and no default 
-gateway set. The VM will assign the static IP address of 192.168.99.1 for its 
+slot with an IP address of 192.168.99.1, netmask 255.255.255.0 and no default 
+gateway set. The VM will assign the static IP address of 192.168.99.50 for its 
 LAN-facing bridge.
 - OpenSSH is installed instead of the default dropbear.
 - The `shutdown` command is enabled via a small script that delegates to 
